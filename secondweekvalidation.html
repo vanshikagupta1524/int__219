@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table tr td{
+    border-radius: 5px;
+    border: 2px solid yellow;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>User info</legend>
+        <form action="#" autocomplete="off" onsubmit="return check">
+            <table style="width:100%" align="center" cellpadding="10" cellspacing="10">
+                <tr><td><input type ="text" id="name" placeholder="enter your name"> <span id="name1"></span></td></tr>
+                
+                <tr><td><input type ="password"  id="password"placeholder="enter your password"></td></tr>
+                <tr><td><input type ="password" id="confirm" placeholder="enter your confirm password"></td></tr>
+                <tr><td><input type ="tel"  id="tel"placeholder="enter your mob no"></td></tr>
+                <tr><td><input type ="email" id="email" placeholder="enter your email"></td></tr>
+                <tr><td><input type ="submit"  id="sub"placeholder="submit"></td></tr>
+            </table>
+        </form>
+    </fieldset>
+<script> 
+var a = document.getelementById("name").value;
+if(a.length<4){
+    document.getElementById("name");
+}
+else{
+    document.getElementById()
+}
+</script>
+
+</body>
+</html>
