@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        fieldset {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: #ff0000;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" autocomplete="off" onsubmit="return checkForm()">
+        <fieldset>
+            <h3>vanshika gupta</h3>
+            <legend>User Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your name">
+            <span id="nameError" class="error"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your password">
+            <span id="passwordError" class="error"></span>
+
+            <label for="conpass">Confirm Password:</label>
+            <input type="password" id="conpass" name="conpass" placeholder="Confirm Your password">
+            <span id="conpassError" class="error"></span>
+
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter Your mobile">
+            <span id="mobileError" class="error"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email">
+            <span id="emailError" class="error"></span>
+
+            <input type="submit" id="button" value="Submit">
+        </fieldset>
+    </form>
+
+    <script>
+        function checkForm() {
+            // Reset all error messages
+            document.querySelectorAll('.error').forEach(function(span) {
+                span.textContent = '';
+            });
+
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var conpass = document.getElementById("conpass").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+
+            // Validation for Name
+            if (name === "") {
+                document.getElementById("nameError").textContent = "Name should not be empty";
+                return false;
+            } else if (name.length < 2) {
+                document.getElementById("nameError").textContent = "Name should be at least 2 characters long";
+                return false;
+            }
+
+            // Validation for Password
+            if (password === "") {
+                document.getElementById("passwordError").textContent = "Password should not be empty";
+                return false;
+            } else if (password.length < 5 || password.length > 15) {
+                document.getElementById("passwordError").textContent = "Password should be between 5 and 15 characters long";
+                return false;
+            }
+
+            // Validation for Confirm Password
+            if (conpass === "") {
+                document.getElementById("conpassError").textContent = "Confirm Password should not be empty";
+                return false;
+            } else if (password !== conpass) {
+                document.getElementById("conpassError").textContent = "Passwords do not match";
+                return false;
+            }
+
+            // Validation for Mobile
+            if (mobile === "") {
+                document.getElementById("mobileError").textContent = "Mobile should not be empty";
+                return false;
+            } else if (isNaN(mobile) || mobile.length !== 10) {
+                document.getElementById("mobileError").textContent = "Invalid mobile number";
+                return false;
+            }
+
+            // Validation for Email
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Email should not be empty";
+                return false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById("emailError").textContent = "Invalid email format";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
