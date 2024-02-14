@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- *************************windwo event attribute***************** -->
+
+    <!-- <script>
+        function loading1(){
+            alert('hi');
+        }
+    </script>
+    <img src="closeup.jpg" alt="" onload="loading1()"> -->
+
+    <!-- ********************onclick -->
+    <!-- for opening in new tab -->
+    <!-- <h2>windows open and close events</h2>
+    <button id="btn1" onclick="opening()">open window</button>
+    <script>
+        function opening(){
+            window.open('http://google.com','self');
+        }
+    </script> 
+     another method to open in new tab=we use space here to open in new window with width and height -->
+      <h2>windows open and close events</h2>
+      <button id="btn1" onclick="opening()">open window</button>
+      <button id="btn2" onclick="closing1()">close window</button>
+      <script>
+        var a;
+    function opening(){
+    var width = 400;
+    var height = 400;
+    var x = (screen.width - width) / 2;
+    var y = (screen.height - height) / 2;
+              a=window.open('http://google.com','', `width=${width}px,height=${height}px,left=${x},top=${y}`);
+         
+          }
+          function closing1(){
+            a.close();
+          }
+
+
+      </script> 
+
+      
+       
+      
+</body>
+</html>

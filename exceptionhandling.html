@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="enter bw 7:30" id="text1">
+    <button onclick="demo()">submit</button>
+    <p id="p1"></p>
+    <script>
+ 
+        var a=document.getElementById(p1)
+        a.innerHTML=""
+        
+        function demo(){
+            var b=document.getElementById("text1").value;
+try{
+    if(b="")throw "error"
+    else if(b<7) throw "throw number is smaller"
+    else if(b>30) throw "throw number is greater"
+    else if(isNaN(b)) throw "not a number"
+else{
+   a.innerHTML="correct"; 
+}
+}
+catch(e){
+    a.innerHTML="The output is "+e
+}
+
+        }
+        
+    </script>
+</body>
+</html>
+<!-- two number 
+second number =0 
+first/number=infinit 
+generate error -->
+<!--Q1 create two variables first value is 100 second variable value is0
+    u have to throw an exception which states number can't be divided by zero
+Q2 create a function inside script  intialize variable a and b
+with some value and use exception handling method
+in which you are trying to
+display the value of c variable which is neither declared nor defined
+weel 3 this exception handling + timing event 
+
+-->
