@@ -1,0 +1,66 @@
+<!-- create two buttons first button text would be start nd second button text would be stop when you press click 
+first button it will display the current time(00:00:00 format)
+and when you click ssecond button button it will stop the timings[use js timings events as per your requirements]  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Display</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+    <div id="timeDisplay"></div>
+  </div>
+
+  <script>
+    let timer; // Variable to hold the timer I
+    function displayTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const currentTime = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('timeDisplay').innerText = currentTime;
+    }
+    function startTimer() {
+      displayTime(); // Display the current time immediately
+      timer = setInterval(displayTime, 1000); // Update time every second
+    }
+    function stopTimer() {
+      clearInterval(timer); // Stop the timer
+    }
+    document.getElementById('startButton').addEventListener('click', startTimer);
+    document.getElementById('stopButton').addEventListener('click', stopTimer);
+  </script>
+</body>
+</html> -->
+<!-- 
+Q)create a javascript timing event in which you have to use settimeout function to stop the timing after 4
+seconds and then after 4s a alert will be displayed which depict your name -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timing Event with setTimeout</title>
+</head>
+<body>
+  <script>
+    // Set a timeout function to stop timing after 4 seconds
+    setTimeout(function() {
+      // Display an alert with your name after 4 seconds
+      const yourName = "Your Name"; // Replace "Your Name" with your actual name
+      alert("Hello, " + yourName + "!");
+    }, 4000); // 4000 milliseconds = 4 seconds
+  </script>
+</body>
+</html>

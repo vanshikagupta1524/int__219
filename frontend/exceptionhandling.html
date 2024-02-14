@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,7 @@ catch(e){
         
     </script>
 </body>
-</html>
+</html> -->
 <!-- two number 
 second number =0 
 first/number=infinit 
@@ -44,6 +44,35 @@ Q2 create a function inside script  intialize variable a and b
 with some value and use exception handling method
 in which you are trying to
 display the value of c variable which is neither declared nor defined
-weel 3 this exception handling + timing event 
+
+week 3 this exception handling + timing event 
 
 -->
+<!-- Q2)) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exception Handling Example</title>
+</head>
+<body>
+  <script>
+    // Initialize variables a and b with some values
+    const a = 10;
+    const b = 5;
+
+    // Function to attempt accessing an undefined variable c
+    function accessUndefinedVariable() {
+      try {
+        // Attempt to display the value of variable c
+        console.log("The value of variable c is:", c);
+      } catch (error) {
+        // If accessing variable c raises an error, catch it and log the error message
+        console.error("Error:", error.message);
+      }
+    }
+    accessUndefinedVariable();
+  </script>
+</body>
+</html>
