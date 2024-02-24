@@ -1,0 +1,77 @@
+<!-- week 5->
+    create an image and button 
+    the image would be 
+aryabhata
+ and button name would be 
+table and factorial
+ whenever you
+are applying -add eventlistner
+on the button the image of aryabhatta will
+disappear at that place table will be displayed
+and when you click button
+again table will be disappeared and factorial
+appears  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aryabhata</title>
+  <style>
+    #aryabhata {
+      display: block;
+    }
+    #table {
+      display: none;
+    }
+    #factorial {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <img id="aryabhata" src="arya.jpg" alt="Aryabhata">
+  <button id="button">Table and Factorial</button>
+  <table id="table">
+    <tr>
+      <td id="tableContent"></td>
+    </tr>
+  </table>
+  <div id="factorial"></div>
+
+  <script>
+    const aryabhata = document.getElementById('aryabhata');
+    const table = document.getElementById('table');
+    const factorial = document.getElementById('factorial');
+    const button = document.getElementById('button');
+
+    button.addEventListener('click', function() {
+      if (table.style.display === 'none' && factorial.style.display === 'none') {
+        aryabhata.style.display = 'none';
+        table.style.display = 'block';
+        let tableContent = '';
+        for (let i = 1; i <= 10; i++) {
+          tableContent += `${i} x 5 = ${i * 5}<br>`;
+        }
+        document.getElementById('tableContent').innerHTML = tableContent;
+      } else if (table.style.display !== 'none') {
+        table.style.display = 'none';
+        factorial.style.display = 'block';
+        let factorialResult = calculateFactorial(5);
+        factorial.textContent = `Factorial of 5: 5! = ${factorialResult}`;
+      } else {
+        factorial.style.display = 'none';
+        aryabhata.style.display = 'block';
+      }
+    });
+
+    function calculateFactorial(num) {
+      if (num === 0 || num === 1) {
+        return 1;
+      } else {
+        return num * calculateFactorial(num - 1);
+      }
+    }
+  </script>
+</body>
+</html>

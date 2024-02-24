@@ -1,0 +1,229 @@
+<!-- WEEK 4 content to upload:
+1)create 4 functions called add,subtract,div,multipilication,and also create four buttons use addEventListiner and make a basic calculator.
+2)create div ,one paragragh ,h1,2,3,4, by using createElement ,appendChild ,textContent properties in js make sure
+your div will be a square box and all the elements will be placed on the div .
+
+------------------------------------------
+
+create a mickey mouse ,two button 1.btn eye to black 2.face will be peach. mouseover on ears color. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="p1">
+        <button id="c1" onclick="event.stopPropagation()">Iam child button</button>
+    </div>
+    <script>
+        var parent=document.querySelector('#p1');
+        parent.addEventListener('click',function(){
+            console.log("parent is invoked");
+        });
+        var child=document.querySelector('#c1');
+        child.addEventListener('click',function()
+        {
+            console.log("child is invoked");
+        });
+    </script>
+</body>
+</html> -->
+<!-- for getting parent first, to work from outer to inner or event capturing -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="p1">
+        <button id="c1">Iam child button</button>
+    </div>
+    <script>
+        var parent=document.querySelector('#p1');
+        parent.addEventListener('click',function(){
+            console.log("parent is invoked");
+        },true);
+        var child=document.querySelector('#c1');
+        child.addEventListener('click',function()
+        {
+            console.log("child is invoked");
+        });
+    </script>
+</body>
+</html> -->
+<!-- <html>
+<style>
+.ele{
+border:20px solid;
+padding:50px;
+}
+
+button{
+padding:20px;
+
+}
+
+</style>
+<body>
+<form id="myform" class="ele">
+<div id="main" class="ele">
+
+<!-- use onclick="event.stopPropagation()" to stop propagation -->
+<p id ="p1" class="ele"></p>
+
+
+
+</div>
+</form>
+<script>
+p1.addEventListener("click", function(){
+    this.style.borderColor = 'red';
+});
+main.addEventListener("click", function(){
+    this.style.borderColor = 'green';
+});
+myform.addEventListener("click", function(){
+    this.style.borderColor = 'blue';
+});
+
+</script>
+
+
+</body>
+
+</html> -->
+<!-- week 4 task
+<!-- 
+  create 4 function called at add sum div mul and also create 4 button use addEventlistner and make basic calculator
+  
+  create div 1 para heading1 2 3 and 4 by using createElement appendchield properties in js make sure our div will be a square box and all the elements will be place in the div(p1,h1,..,h4)
+
+  create a micky mouse 
+ -->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+     #container {
+       /* border: 2px solid red; */
+       position: relative;
+       padding-left: 111px;
+ 
+     }
+ 
+     #div1 {
+       /* background-color: green; */
+       border: 2px solid black;
+       margin: 12px;
+       height: 300px;
+       width: 300px;
+       border-radius: 50%;
+       position: absolute;
+     }
+ 
+     #div2 {
+       top: 72px;
+       left: 150px;
+       height: 80px;
+       width: 60px;
+     }
+     
+     #div3 {
+       top: 72px;
+       left: 300px;
+       height: 80px;
+       width: 60px;
+     }
+ 
+     #div4 {
+     top: 194px;
+     left: 230px;
+     height: 60px;
+     width: 60px;
+ }
+ 
+ #div5 {
+     left: 28px;
+     top: 12px;
+     height: 100px;
+     width: 100px;
+ }
+ #div6 {
+     left: 393px;
+     top: 12px;
+     height: 100px;
+     width: 100px;
+ }
+ 
+     .box {
+       /* background-color: rgb(128, 47, 0); */
+       border: 2px solid black;
+       margin: 12px;
+       height: 80px;
+       width: 80px;
+       border-radius: 50%;
+       position: absolute;
+     }
+   </style>
+ </head>
+ 
+ <body>
+   <div id="container">
+     <div id="div1"></div>
+     <div id="div2" class="box"></div>
+     <div id="div3" class="box"></div>
+     <div id="div4" class="box"></div>
+     <div id="div5" class="box"></div>
+     <div id="div6" class="box"></div>
+   </div>
+   <script>
+     let div1=document.getElementById("div1");
+     let div2=document.getElementById("div2");
+     let div3=document.getElementById("div3");
+     let div4=document.getElementById("div4");
+     let div5=document.getElementById("div5");
+     let div6=document.getElementById("div6");
+     div5.addEventListener("click",()=>{
+       div6.style.backgroundColor="black"
+     })
+     div4.addEventListener("click",()=>{
+       div1.style.backgroundColor="pink"
+     })
+     div6.addEventListener("click",()=>{
+       div5.style.backgroundColor="black"
+     })
+     div2.addEventListener("click",()=>{
+       div3.style.backgroundColor="black"
+     })
+     div3.addEventListener("click",()=>{
+       div2.style.backgroundColor="black"
+     })
+     div3.addEventListener("click",()=>{
+       div4.style.backgroundColor="black"
+     })
+     
+ 
+   </script>
+ </body>
+ 
+ </html> -->
+<!-- week 5->
+    create an image and button the image would be 
+aryabhata and button name would be 
+table and factorial whenever you
+are applying -add eventlistner
+on the button the image of aryabhatta will
+disappear at that place table will be displayed
+and when you click button
+again table will be disappeared and factorial
+appears  -->

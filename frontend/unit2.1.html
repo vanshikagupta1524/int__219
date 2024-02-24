@@ -1,0 +1,148 @@
+<!-- create three rectangle boxes and create three buttons below rectangle 
+boxes (named as red,green,yellow)
+when you click on red button ,color of 2 and 3 boxes will be changed to
+green&yellow,when you click green,then 1 and 3 red boxes 
+color will be changed to red and yellow vice versa -->
+
+
+<!-- insert an image of aryabhatt in your code when you click on the image 
+the informtion about aryabhatt will be opened and also 
+write one quotation about newton when you click on the quotation 
+then newtwon image will be displayed   -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Color Boxes</title>
+	<style>
+		.box {
+		  width: 100px;
+		  height: 100px;
+		  display: inline-block;
+		  margin-right: 10px;
+		}
+
+		.red {
+		  background-color: red;
+		}
+
+		.green {
+		  background-color: green;
+		}
+
+		.yellow {
+		  background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="box red"></div>
+	<div class="box green"></div>
+	<div class="box yellow"></div>
+
+	<button id="red-btn">Red</button>
+	<button id="green-btn">Green</button>
+	<button id="yellow-btn">Yellow</button>
+
+	<script>
+		const redBtn = document.getElementById('red-btn');
+		const greenBtn = document.getElementById('green-btn');
+		const yellowBtn = document.getElementById('yellow-btn');
+
+		const box2 = document.getElementsByClassName('box')[1];
+		const box3 = document.getElementsByClassName('box')[2];
+		const box1 = document.getElementsByClassName('box')[0];
+
+		redBtn.addEventListener('click', () => {
+		  box2.classList.remove('green', 'yellow');
+		  box2.classList.add('red');
+		  box3.classList.remove('green', 'yellow');
+		  box3.classList.add('red');
+		});
+
+		greenBtn.addEventListener('click', () => {
+		  box1.classList.remove('red', 'yellow');
+		  box1.classList.add('green');
+		  box3.classList.remove('red', 'yellow');
+		  box3.classList.add('green');
+		});
+
+		yellowBtn.addEventListener('click', () => {
+		  box1.classList.remove('red', 'green');
+		  box1.classList.add('yellow');
+		  box2.classList.remove('red', 'green');
+		  box2.classList.add('yellow');
+		});
+	</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Boxes</title>
+	<style>
+		.box {
+		  width: 100px;
+		  height: 100px;
+		  display: inline-block;
+		  margin-right: 10px;
+		}
+
+		.red {
+		  background-color: red;
+		}
+
+		.green {
+		  background-color: green;
+		}
+
+		.yellow {
+		  background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="box red"></div>
+	<div class="box green"></div>
+	<div class="box yellow"></div>
+
+	<button id="red-btn">Red</button>
+	<button id="green-btn">Green</button>
+	<button id="yellow-btn">Yellow</button>
+
+	<script>
+		const redBtn = document.getElementById('red-btn');
+		const greenBtn = document.getElementById('green-btn');
+		const yellowBtn = document.getElementById('yellow-btn');
+
+		const box2 = document.getElementsByClassName('box')[1];
+		const box3 = document.getElementsByClassName('box')[2];
+		const box1 = document.getElementsByClassName('box')[0];
+
+		redBtn.addEventListener('click', () => {
+		  box1.classList.remove('red');
+		  box2.classList.remove('green');
+		  box2.classList.add('red');
+		  box3.classList.remove('yellow');
+		  box3.classList.add('green');
+		});
+
+		greenBtn.addEventListener('click', () => {
+		  box1.classList.remove('green');
+		  box1.classList.add('red');
+		  box2.classList.remove('green');
+		  box3.classList.remove('yellow');
+		  box3.classList.add('green');
+		});
+
+		yellowBtn.addEventListener('click', () => {
+		  box1.classList.remove('yellow');
+		  box1.classList.add('red');
+		  box2.classList.remove('yellow');
+		  box2.classList.add('green');
+		  box3.classList.remove('green');
+		});
+	</script>
+</body>
+</html>
