@@ -12,7 +12,7 @@ and when you click button
 again table will be disappeared and factorial
 appears  -->
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -40,28 +40,28 @@ appears  -->
   <div id="factorial"></div>
 
   <script>
-    const aryabhata = document.getElementById('aryabhata');
-    const table = document.getElementById('table');
-    const factorial = document.getElementById('factorial');
-    const button = document.getElementById('button');
+    const a = document.getElementById('aryabhata');
+    const t = document.getElementById('table');
+    const f = document.getElementById('factorial');
+    const b = document.getElementById('button');
 
     button.addEventListener('click', function() {
-      if (table.style.display === 'none' && factorial.style.display === 'none') {
-        aryabhata.style.display = 'none';
-        table.style.display = 'block';
+      if (t.style.display === 'none' && f.style.display === 'none') {
+        a.style.display = 'none';
+        t.style.display = 'block';
         let tableContent = '';
         for (let i = 1; i <= 10; i++) {
           tableContent += `${i} x 5 = ${i * 5}<br>`;
         }
         document.getElementById('tableContent').innerHTML = tableContent;
-      } else if (table.style.display !== 'none') {
-        table.style.display = 'none';
-        factorial.style.display = 'block';
+      } else if (t.style.display !== 'none') {
+        t.style.display = 'none';
+        f.style.display = 'block';
         let factorialResult = calculateFactorial(5);
-        factorial.textContent = `Factorial of 5: 5! = ${factorialResult}`;
+        f.textContent = `Factorial of 5: 5! = ${factorialResult}`;
       } else {
-        factorial.style.display = 'none';
-        aryabhata.style.display = 'block';
+        f.style.display = 'none';
+        a.style.display = 'block';
       }
     });
 
@@ -74,4 +74,5 @@ appears  -->
     }
   </script>
 </body>
-</html>
+</html> 
+

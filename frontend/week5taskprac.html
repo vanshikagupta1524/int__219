@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table and factorial</title>
+  <style>
+    #img1 {
+      display: block;
+    }
+    
+    #table {
+      display: none;
+    }
+    
+    #fact {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <img src="arya.jpg" alt="aryabhatt image" id="img1">
+  <button id="btn1">table</button>
+  <button id="btn2">factorial</button>
+  
+  <table id="table">
+    <tr>
+      <td id="content"></td>
+    </tr>
+  </table>
+  
+  <div id="fact"></div>
+  
+  <script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var img1 = document.getElementById('img1');
+    var tableElm = document.getElementById('table');
+    var factElm = document.getElementById('fact');
+    
+    btn1.addEventListener("click", function () {
+      if (!tableElm.style.display || tableElm.style.display === 'none') {
+        img1.style.display = 'none';
+        tableElm.style.display = 'block';
+        
+        let str = '';
+        for (let i = 1; i <= 10; i++) {
+          str += `${i} * 5 = ${i * 5}<br>`;
+        }
+        document.getElementById("content").innerHTML = str;
+      }
+    });
+    btn2.addEventListener("click",function(){
+        tableElm.style.display = 'none';
+        factElm.style.display='block';
+        let result=factorial(5);
+        factElm.textContent=`facorial of 5 is: ${result}`;
+        
+    });
+
+    function factorial(num){
+if(num==0 || num==1){
+    return 1;
+
+}
+else{
+     return num*factorial(num-1);
+}
+    }
+  </script>
+</body>
+</html>
