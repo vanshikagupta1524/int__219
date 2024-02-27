@@ -7,7 +7,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="slider.css";
+    <link rel="stylesheet" href="slider.css">
+    <style>
+        *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+main{
+    overflow:hidden;
+    width:50%;
+    height:300px;
+    box-shadow:  0 0 6px greenyellow;
+    margin:auto;
+margin-top:250px;
+position:relative;
+
+}
+.slider{
+    width:100%;
+    height:100%;
+    position:absolute;
+
+}
+#previous{
+    text-align:center;
+    background-color: aquamarine;
+
+    margin-top:7%;
+    margin-bottom:10%;
+    margin-left:45%;
+    padding:4px;
+}
+#next{
+    text-align:center;
+    background-color: rgb(255, 127, 136);
+    padding:4px;
+   
+}
+    </style>
 
 </head>
 <body>
@@ -22,6 +60,31 @@
         <button onclick="next()" id="next">next</button>
 
     </div>
-    <script src="slider.js"></script>
+    <script src="slider.js">
+        const a=document.querySelectorAll('.slider');
+// var counter=0;
+var counter=0;
+console.log(a);
+a.forEach(
+    (slider,index)=>{
+slider.style.left=`${index*100}%`
+    }
+)
+const previous=()=>{
+    counter--
+    sliderrun()
+}
+const next=()=>{
+   counter++
+   sliderrun() 
+}
+const sliderrun=()=>
+{
+    a.forEach(
+        (slider)=>
+        slider.style.transform=`translateX(-${counter*100}%)`
+    )
+}
+    </script>
 </body>
 </html>

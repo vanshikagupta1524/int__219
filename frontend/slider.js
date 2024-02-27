@@ -1,29 +1,32 @@
-const a=document.querySelectorAll('.slider');
+// const a=document.querySelectorAll('.slider');
+// // var counter=0;
 // var counter=0;
-var counter=0;
-console.log(a);
-a.forEach(
-    (slider,index)=>{
-slider.style.left=`${index*100}%`
-    }
-)
-const previous=()=>{
-    counter--
-    sliderrun()
-}
-const next=()=>{
-   counter++
-   sliderrun() 
-}
-const sliderrun=()=>
-{
-    a.forEach(
-        (slider)=>
-        slider.style.transform=`translateX(-${counter*100}%)`
-    )
-}
+// console.log(a);
+// a.forEach(
+//     (slider,index)=>{
+// slider.style.left=`${index*100}%`
+//     }
+// )
+// const previous=()=>{
+//     counter--
+//     sliderrun()
+// }
+// const next=()=>{
+//    counter++
+//    sliderrun() 
+// }
+// const sliderrun=()=>
+// {
+//     a.forEach(
+//         (slider)=>
+//         slider.style.transform=`translateX(-${counter*100}%)`
+//     )
+// }
+
+// ========================================================================
 
 // slider Ques in ca ,image  validation
+// ========================================
 // Q create  a input field and a button that input field will be for file uploading 
 // the fileshould not be more than 4 mb if the fie is more than 4 mb than it will generate  a
 // error inside the span

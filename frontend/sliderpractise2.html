@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider by another method</title>
+    <style>
+         /* *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        } */
+        body{
+            background-color: bisque;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:80vh;
+      
+
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            gap:50px;
+        }
+    .arrow{
+        height:40px;
+        cursor: pointer;
+    }
+    .right{
+        transform: rotate(180deg);
+    }
+    .frame{
+        width:212px;
+        height:148px;
+        overflow:hidden;
+        box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.993);
+        
+    }
+    .slider{
+        display:flex;
+        transition: all 1s ease;
+    }
+   
+    .image{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+    </style>
+</head>
+<body>
+  
+
+    <div class="container">
+        <img src="left shift.png" class=" arrow left" >
+
+        <div class="frame">
+            <div class="slider">
+                <img src="arya.jpg" class="image"  >
+                <img src="flower.jpg" class="image" >
+                <img src="arya.jpg" class="image">
+                <img src="flower.jpg" class="image" >
+            </div>
+           
+        
+        </div>
+       
+
+        <img src="left shift.png" class=" arrow right" >
+     
+    </div>
+    <script>
+
+
+const left = document.querySelector('.left');
+const right = document.querySelector('.right');
+const slider = document.querySelector('.slider');
+const images = document.querySelectorAll('.image');
+let slideNumber = 1;
+const length = images.length;
+const nextslide = () => {
+    slider.style.transform = `translateX(-${slideNumber * 212}px)`;
+    slideNumber++;
+}
+const prevslide = () => {
+    slider.style.transform = `translateX(-${(slideNumber - 2) * 212}px)`;
+    slideNumber--;
+}
+const getfirstslide = () => {
+    slider.style.transform = `translateX(0px)`;
+    slideNumber = 1;
+}
+const getlastslide = () => {
+    slider.style.transform = `translateX(-${(length - 1) * 212}px)`;
+    slideNumber = length;
+}
+right.addEventListener("click", () => {
+    if (slideNumber < length) {
+        nextslide();
+    } else {
+        getfirstslide();
+    }
+});
+left.addEventListener("click", () => {
+    if (slideNumber > 1) {
+        prevslide();
+    } else {
+        getlastslide();
+    }
+});
+
+    </script>
+ 
+
+</body>
+</html>
