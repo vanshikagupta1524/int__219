@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@
             box-sizing: border-box;
         } */
         body{
-            background-color: bisque;
+            background-color: grey;
             display:flex;
             align-items: center;
             justify-content: center;
@@ -21,6 +20,12 @@
 
         }
         .container{
+            display: flex;
+            align-items: center;
+            gap:50px;
+            flex-direction: column;
+        }
+        .top{
             display: flex;
             align-items: center;
             gap:50px;
@@ -49,12 +54,25 @@
         height:100%;
         object-fit: cover;
     }
+    .bottom{
+        display:flex;
+        gap:10px;
+    }
+    .button{
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        border:1px solid white;
+        cursor:pointer;
+        
+    }
     </style>
 </head>
 <body>
   
 
     <div class="container">
+        <div class="top">
         <img src="left shift.png" class=" arrow left" >
 
         <div class="frame">
@@ -63,14 +81,17 @@
                 <img src="flower.jpg" class="image" >
                 <img src="arya.jpg" class="image">
                 <img src="flower.jpg" class="image" >
+                
             </div>
            
         
-        </div>
-       
-
+            </div>
         <img src="left shift.png" class=" arrow right" >
-     
+     </div>
+     <div class="bottom">
+
+
+     </div>
     </div>
     <script>
 
@@ -79,8 +100,42 @@ const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const slider = document.querySelector('.slider');
 const images = document.querySelectorAll('.image');
-let slideNumber = 1;
+let slideNumber = 0;
 const length = images.length;
+
+// start for dots
+const bottom=document.querySelector('.bottom');
+for(let i=0;i<length;i++){
+const div=document.createElement('div');
+div.className='button';
+bottom.appendChild(div);
+}
+const  buttons=document.querySelectorAll('.button');
+const resetBg=()=>{
+buttons.forEach((button)=>{
+button.style.backgroundColor='transparent';
+});
+};
+buttons[0].style.backgroundColor='white';
+buttons.forEach((button,i)=>{
+    button.addEventListener("click",()=>{
+        resetBg();
+        slider.style.transform=`translateX(-${i*212}px)`;
+        slideNumber=i+1;
+        button.style.backgroundColor='white';
+    });
+});
+const changeColor=()=>{
+    resetBg();
+    buttons[slideNumber-1].style.backgroundColor='white';
+};
+
+
+
+
+
+// end for dots
+// start for buttons
 const nextslide = () => {
     slider.style.transform = `translateX(-${slideNumber * 212}px)`;
     slideNumber++;
@@ -103,6 +158,7 @@ right.addEventListener("click", () => {
     } else {
         getfirstslide();
     }
+    changeColor();
 });
 left.addEventListener("click", () => {
     if (slideNumber > 1) {
@@ -110,7 +166,10 @@ left.addEventListener("click", () => {
     } else {
         getlastslide();
     }
+    changeColor();
 });
+// end for buttons
+
 
     </script>
  
