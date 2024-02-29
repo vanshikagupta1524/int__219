@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto play slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    body{
+            background-color: grey;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:80vh;
+      
+
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            gap:50px;
+            flex-direction: column;
+        }
+        .top{
+            display: flex;
+            align-items: center;
+            gap:50px;
+        }
+#chevron-left-icon,
+#chevron-right-icon {
+    cursor: pointer;
+}
+ 
+    .frame{
+        width:536px;
+        height:354px;
+        overflow:hidden;
+        box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.993);
+        
+    }
+    .slider{
+        display:flex;
+        transition: all 1s ease;
+    }
+   
+    .image{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+    .bottom{
+        display:flex;
+        gap:10px;
+    }
+    .button{
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        border:1px solid white;
+        cursor:pointer;
+        
+    }
+    </style>
+  
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <i id="chevron-left-icon"  class="fa fa-chevron-left fa-2x" style="color: #000000"></i>
+          
+
+        <div class="frame">
+            <div class="slider">
+                <img src="image1.jpg" class="image">
+                <img src="image2.jpg" class="image">
+                <img src="image3.jpg" class="image">
+                <img src="image2.jpg" class="image">
+            </div>
+        </div>
+        <i id="chevron-right-icon" class="fa fa-chevron-right fa-2x" style="color: #000000"></i>
+    </div>
+        <div class="bottom"></div>
+    </div>
+    <script>
+        
+
+
+       
+    var slidernumber=1;
+    const sliders=document.querySelector('.slider');
+    console.log(sliders);
+    const left=document.querySelector('#chevron-left-icon');
+    console.log(left);
+    const right=document.querySelector('#chevron-right-icon');
+    console.log(right);
+    const images=document.querySelectorAll('.image');
+    let length=images.length;
+    const prevslide=()=>{
+      sliders.style.transform=`translateX(-${(slidernumber-2)*536}px)`;
+      slidernumber--;
+    }
+    // start for dots
+    const bottom=document.querySelector('.bottom');
+for(let i=0;i<length;i++){
+const div=document.createElement('div');
+div.className='button';
+bottom.appendChild(div);
+}
+const  buttons=document.querySelectorAll('.button');
+const resetBg=()=>{
+buttons.forEach((button)=>{
+button.style.backgroundColor='transparent';
+});
+};
+buttons[0].style.backgroundColor='white';
+buttons.forEach((button,i)=>{
+    button.addEventListener("click",()=>{
+        resetBg();
+        sliders.style.transform=`translateX(-${i*536}px)`;
+        slidernumber=i+1;
+        button.style.backgroundColor='white';
+    });
+});
+const changeColor=()=>{
+    resetBg();
+    buttons[slidernumber-1].style.backgroundColor='white';
+};
+
+
+    // end for dots
+
+ // start for buttons
+    const nextslide=()=>{
+      sliders.style.transform=`translateX(-${slidernumber*536}px)`;
+      slidernumber++;
+    }
+    const getfirstslide=()=>{
+        sliders.style.transform=`translate(0px)`;
+        slidernumber=1;
+    }
+    const getlastslide=()=>{
+        sliders.style.transform=`translateX(-${(length-1)*536}px)`;
+        slidernumber=length;
+    }
+
+    left.addEventListener("click",()=>{
+        if(slidernumber>1){
+            prevslide();
+        }
+        else{
+            getlastslide();
+        }
+        changeColor();
+    });
+    right.addEventListener("click",()=>{
+        if(slidernumber<length){
+            nextslide();
+        }
+        else{
+            getfirstslide();
+        }
+        changeColor();
+
+});
+// end for buttons
+
+// auto play slider
+let slideinterval;
+const startslideshow=()=>{
+    slideinterval=setInterval(()=>{
+        if(slidernumber<length){
+            nextslide();
+        }
+        else{
+            getfirstslide();
+        }
+        changeColor();
+    },2000);
+}
+const stopslideshow=()=>{
+    clearInterval(slideinterval);
+}
+
+startslideshow();
+sliders.addEventListener('mouseover',stopslideshow);
+sliders.addEventListener('mouseout',startslideshow);
+left.addEventListener('mouseover',stopslideshow);
+left.addEventListener('mouseout',startslideshow);
+right.addEventListener('mouseover',stopslideshow);
+right.addEventListener('mouseout',startslideshow);
+    </script>
+</body>
+</html>

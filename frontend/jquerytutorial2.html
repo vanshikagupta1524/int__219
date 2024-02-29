@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js">
+ 
+    </script>
+  
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th colspan="3" id="yellow">
+            Datesheet
+       
+    </th>
+    <tr>
+        <td>subject</td>
+        <td>timing</td>
+        <td>room no</td>
+        
+    </tr>
+    <tr>
+        <td>Os</td>
+        <td>9:30-10:30</td>
+        <td>38-916</td>
+        
+    </tr>
+    <tr>
+        <td>gen Ai</td>
+        <td>10:00-11:00</td>
+        <td>32-222</td>
+        
+    </tr>
+    <tr>
+        <td>Daa</td>
+        <td id="time">12:00-3:00</td>
+        <td>36-912</td>
+        
+    </tr>
+</table>
+
+    <script>
+    $(document).ready(function(){
+        $("#yellow").css("backgroundColor","yellow");
+        $("#time").css("backgroundColor","orange");
+        $("table").css("border","2px solid green");
+        $("table").css("text-align","centre");
+        $("table").css("margin","auto");
+        $("table").css("margin-top","20%");
+       
+        
+
+    });
+</script>
+</body>
+</html>
