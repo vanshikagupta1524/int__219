@@ -1,0 +1,61 @@
+<!-- form events -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <form autocomplete="off">
+        <input type="text" id="one">
+        <input type="password" id="two">
+        <select name="subject" id="three">
+            <option value="OS">OS</option>
+            <option value="DSA">DSA</option>
+            <option value="HTML">HTML</option>
+            
+        </select>
+        <button type="submit" id="sub">Submit</button>
+        
+    </form>
+    <script>
+       
+        for(let i=0;i<=5;i++){
+            let counter=1;
+            let line="";
+            for(let j=1;j<=i;j++){
+                line=line+j+" ";
+                
+                counter++;
+            }
+            console.log(line);
+        }
+        
+    
+        $(document).ready(function(){
+            $("#one").focus(function(){
+                $("#one").css("backgroundColor","green");
+            });
+            $("#one,#two").blur(function(){
+                $("#one,#two").css("backgroundColor","transparent");
+            });
+            $("#one").select(function(){
+                $("#one").css("backgroundColor","pink");
+            });
+            $("#three").change(function(){
+                $("#three").css("backgroundColor","yellow");
+            });
+            $("#sub").click(function(){
+        console.log("vanshika");
+        alert("vanshika tum bahut achi bachi ho");
+            });
+ 
+
+
+});
+
+    </script>
+</body>
+</html>
