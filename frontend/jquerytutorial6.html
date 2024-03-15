@@ -1,0 +1,36 @@
+<!-- dom events -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="p1">sincerity is imp</p>
+    <p id="p2">you <strong>can be</strong></p>
+    <p><input type="text" value="learning" id="p3"></p>
+        <button id="btn1">Show Text</button>
+        <button id="btn2">Show HTML</button>
+        <button id="btn3">Show Value</button>
+    
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert($("#p1").text());
+            });
+            $("#btn2").click(function(){
+                alert($("#p2").html());
+            });
+            $("#btn2").click(function(){
+                alert($("#p2").text());
+            });
+            // $("#btn3").click(function(){
+            //     alert($("#p3").val());
+            // });
+
+        });
+    </script>
+</body>
+</html>

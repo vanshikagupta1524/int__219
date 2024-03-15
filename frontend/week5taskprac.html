@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -67,6 +67,80 @@ else{
      return num*factorial(num-1);
 }
     }
+  </script>
+</body>
+</html> -->
+
+
+<!-- practise second time -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table and factorial</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh; /* Full viewport height */
+      display: flex;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column; /* Align items in a column */
+      align-items: center; /* Center items horizontally */
+    }
+
+    .button {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="arya.jpg" alt="Arya Image" id="aryu">
+    <div class="button">
+      <button id="btn1">table</button>
+      <button id="btn2">factorial</button>
+    </div>
+  </div>
+  <script>
+    let line;
+  
+    let temp=1;
+  
+
+
+const a=document.getElementById('aryu');
+const t=document.getElementById('btn1');
+const p=document.getElementById('btn2');
+t.addEventListener("click",function(){
+  a.style.display==='none';
+  if(a.style.display==='none'){
+    for(let i=0;i<=10;i++){
+    line=`${i}*5=${i*5}<br>`;
+  }
+  }
+  a.style.display==='block';
+});
+p.addEventListener("click",function(){
+  if(a.style.display==='none'){
+    if(i==0 || i==1){
+    return 1;
+  }
+  else{
+    for(let i=1;i<=a;i++){
+   temp=temp*i;
+  }
+  }
+  }
+  a.style.display==='block';
+  
+ 
+});
   </script>
 </body>
 </html>

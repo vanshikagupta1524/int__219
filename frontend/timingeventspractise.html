@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing events practise</title>
+    <style>
+    .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <button b1="btn1">start</button>
+    <button b2="btn2">stop</button>
+    <div id="timeDisplay"></div>
+    </div>
+    
+    <script>
+            let timer; 
+ 
+    function displaytime(){
+        const now=new Date();
+        const hours = String(now.getHours()).padStart(2,'0');
+        const minutes=String(now.getMinutes()).padStart(2,'0');
+        const seconds=String(now.getSeconds()).padStart(2,'0');
+        const currenttime=`${hours}:${minutes}:${seconds}`;
+        document.getElementById('timeDisplay').innerText=currenttime;
+    }
+        function starttimer(){
+            displaytime();
+            timer=setInterval(displaytime,1000);
+        }
+        function stoptimer(){
+            clearInterval(timer);
+        }
+        document.getElementById('btn1').addEventListener("click",starttimer);
+        document.getElementById('btn2').addEventListener("click",stoptimer);
+    </script>
+</body>
+</html>
