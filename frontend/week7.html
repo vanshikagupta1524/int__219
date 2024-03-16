@@ -1,0 +1,62 @@
+<!-- create an array that comprises the subjects that you are learning in this semester
+     then you ahve to display
+the fifth eleemnt of the array
+if the array at the 0 th loation is os you have to replace with dbms
+and you have to  display 0th element on the webpage. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let myJSON=["oas","pea","int219","cse320","mth222","dbms","pel"];
+       
+        if(myJSON[0]=="oas"){
+            myJSON[0]="dbms";
+        }
+        document.getElementById("demo").innerHTML=myJSON[0];
+        document.write(myJSON[0]);
+    </script>
+</body>
+</html> -->
+
+
+<!-- create an object student in which you have to writ the
+keys as name roll number attendent subjects you have to
+create arrAY OF SUBJECTS  where the keys will be 
+subject name and cousrse teacher name considering course teacher as a nested array
+then you have to dispLAY the object and corresponding teacher name
+in the course teacher name you have to pass first name and last name of teacher  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            "name":"shh",
+            "roll_no":22,
+            "attendence":55,
+            subjects:{
+                "oas":["shreya","gupta"],
+                "dbms":["herrr","sharma"],
+                "pel":["shrrr","verma"],
+        }
+    };
+    for(let subjects in obj.subjects){
+        let teacher=obj.subjects[subjects][0];
+        let teachers=obj.subjects[subjects][1];
+        console.log(`${subjects}:${teacher}`);
+        console.log(`${subjects}:${teachers}`);
+    }
+    </script>
+</body>
+</html>

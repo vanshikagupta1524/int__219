@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="btn1">
+            <button>sum</button>
+        </div>
+        <div id="btn2">
+            <button>minus</button>   
+        </div>
+        <div id="btn3">
+            <button>multiply</button>
+        </div>
+        <div id="btn4">
+            <button>divide</button>
+        </div>
+    </div>
+    <script>
+        const btn1=document.getElementById('btn1');
+        const btn2=document.getElementById('btn2');
+        const btn3=document.getElementById('btn3');
+        btn1.addEventListener("click",function(){
+            const a=parseInt(prompt("enter 1st value"));
+            const b=parseInt(prompt("enter 2nd value"));
+            const s=a+b;
+            alert("the sum is:"+s);
+        });
+        btn2.addEventListener("click",function(){
+            const a=parseInt(prompt("enter 1st value"));
+            const b=parseInt(prompt("enter 2nd value"));
+            const s=a-b;
+            alert("the sum is:"+s);
+        });
+        btn3.addEventListener("click",function(){
+            const a=parseInt(prompt("enter 1st value"));
+            const b=parseInt(prompt("enter 2nd value"));
+            const s=a*b;
+            alert("the sum is:"+s);
+        });
+        btn4.addEventListener("click",function(){
+            const a=parseInt(prompt("enter 1st value"));
+            const b=parseInt(prompt("enter 2nd value"));
+            const s=a/b;
+            alert("the sum is:"+s);
+        });
+    </script>
+</body>
+</html>

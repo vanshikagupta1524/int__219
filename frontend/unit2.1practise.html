@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height:200px;
+            width:200px;
+        }
+        button{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="btn1">
+            <button >button1</button>
+        </div>
+        <div id="btn2">
+            <button >button2</button>
+        </div>
+        <div id="btn3">
+            <button >button3</button>
+        </div>
+        
+    </div>
+    <script>
+        const btn1=document.getElementById('btn1');
+        const btn2=document.getElementById('btn2');
+        const btn3=document.getElementById('btn3');
+        btn1.addEventListener("click",function(){
+            btn1.style.backgroundColor="white";          
+            btn2.style.backgroundColor="green";
+            btn3.style.backgroundColor="blue";
+        });
+        btn2.addEventListener("click",function(){
+            btn2.style.backgroundColor="white";          
+            btn1.style.backgroundColor="red";
+            btn3.style.backgroundColor="blue";
+        });
+        btn3.addEventListener("click",function(){
+            btn3.style.backgroundColor="white";          
+            btn1.style.backgroundColor="red";
+            btn2.style.backgroundColor="green";
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="image">
+        <img src="arya.jpg" alt="aryabhata">
+    </div>
+    <div id="image1">
+        <img src="flower.jpg" alt="flower">
+    </div>
+    <div id="para" style="display: none;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A assumenda unde dolorum magni iure? Voluptas veniam vel explicabo aliquam quidem aliquid, incidunt consectetur praesentium <mark id="mark">velit porro</mark> asperiores culpa totam est dolor voluptates natus et optio ex fugiat ad impedit ipsam vero. Quae necessitatibus maxime ipsa error nesciunt quos tempore recusandae.
+    </div>
+    <div id="new"></div>
+    <script>
+        const a=document.getElementById('image');
+        const b=document.getElementById('image1');
+        const p=document.getElementById('para');
+        const m=document.getElementById('mark');
+    document.addEventListener("DOMContentLoaded",function(){
+        document.getElementById('para').style.display='none';
+        document.getElementById('image1').style.display='none';
+    });
+    a.addEventListener("click",function(){
+        p.style.display='block';
+
+    })
+    m.addEventListener("click",function(){
+        a.style.display='none';
+        b.style.display='block';
+
+    })
+
+    </script>
+</body>
+</html>

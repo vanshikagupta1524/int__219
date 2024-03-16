@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <script>
+        var stud,a="",i;
+        // stud={
+        //     "name":"aman",
+        //     "age":23,
+        //     "courses":"HTML"
+        // }
+        // stringiify used to convert object into strings
+        // var sh=JSON.stringify(stud);
+        // document.getElementById("p").innerHTML=sh;
+        // while parse is use to convert string into objects
+        stud=`{
+            "name":"aman",
+            "age":23,
+            "courses":"HTML"
+        }`
+        var sh=JSON.parse(stud);
+        document.getElementById("p").innerHTML=sh;
+      
+    </script>
+</body>
+</html>

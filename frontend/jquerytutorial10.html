@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<form>
+    <input type="text" name="name" id="name"><br>
+    <input type="submit" name="submit" id="btn" disabled="disabled"><br>
+    </form>
+    <script>
+        $('#name').keyup(function(){
+            if($('#name').val()!='')
+            {
+                $('#btn').removeAttr('disabled');
+            }
+            else if($('#name').val()='')
+            {
+                $('#btn').attr('disabled','true');
+            }
+        })
+    </script>
+    </body>
+  
+    </html>
+    <!-- demonstrate the usage of show,hide,animate,fadein,fadeto,slide down,slide toggle as a week 6 activity -->

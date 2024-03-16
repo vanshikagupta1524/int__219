@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="p1">hello.........</p>
+    <h1 id="h1">hiii...</h1>
+    <button type="submit" id="btn1">before</button>
+    <button type="submit" id="btn2">after</button>
+    <script>
+        // $(document).ready(function(){
+        //     $("#btn1").click(function()
+        //     {
+        //         $("#p1").prepend("Good morning ");
+        //         $("#h1").append("Study Well ");
+        //     })
+        // });
+        $(document).ready(function(){
+            $("#btn1").click(function()
+            {
+                $("#p1").before("Good morning ");
+                // $("#h1").after("Study Well ");
+            })
+            $("#btn2").click(function()
+            {
+            //     $("#p1").before("Good morning ");
+                $("#h1").after("Study Well ");
+            })
+        });
+    </script>
+</body>
+</html>
